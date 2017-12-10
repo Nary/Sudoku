@@ -1,0 +1,156 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+    <style name="bouton_main">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/colorBlack</item>
+        <item name="android:soundEffectsEnabled">false</item>
+    </style>
+    <style name="bouton_main.startDiffculty">
+        <item name="android:onClick">startSession</item>
+    </style>
+    <style name="layout_sudoku">
+        <item name="android:background">@color/colorBlack</item>
+        <item name="android:gravity">center</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <style name="row_top">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_marginLeft">@dimen/marg_big</item>
+        <item name="android:layout_marginRight">@dimen/marg_big</item>
+        <item name="android:layout_marginTop">@dimen/marg_big</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:background">@color/colorBlack</item>
+    </style>
+
+    <style name="row_mid">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_marginLeft">@dimen/marg_big</item>
+        <item name="android:layout_marginRight">@dimen/marg_big</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:background">@color/colorBlack</item>
+    </style>
+
+    <style name="row_bot">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_marginLeft">@dimen/marg_big</item>
+        <item name="android:layout_marginRight">@dimen/marg_big</item>
+        <item name="android:layout_marginBottom">@dimen/marg_big</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:background">@color/colorBlack</item>
+    </style>
+
+    <style name="sub_linlayout">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:background">@color/colorGrayDark</item>
+    </style>
+    <style name="sub_linlayout.gauche">
+        <item name="android:layout_marginRight">@dimen/marg_small</item>
+    </style>
+
+    <style name="sub_linlayout.mid">
+        <item name="android:layout_marginRight">@dimen/marg_small</item>
+        <item name="android:layout_marginLeft">@dimen/marg_small</item>
+    </style>
+
+    <style name="sub_linlayout.droite">
+        <item name="android:layout_marginLeft">@dimen/marg_small</item>
+    </style>
+
+
+    <style name="sudoku_txtv">
+        <item name="android:background">@color/colorWhite</item>
+        <item name="android:textColor">@color/colorBlack</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:onClick">caseSudoku</item>
+        <item name="android:clickable">true</item>
+        <item name="android:textSize">@dimen/text_size_normal</item>
+        <item name="android:soundEffectsEnabled">false</item>
+    </style>
+
+    <style name="sudoku_txtv.1">
+        <item name="android:layout_marginRight">@dimen/marg_smallsmall</item>
+        <item name="android:layout_marginBottom">@dimen/marg_smallsmall</item>
+    </style>
+    <style name="sudoku_txtv.2">
+        <item name="android:layout_marginLeft">@dimen/marg_smallsmall</item>
+        <item name="android:layout_marginRight">@dimen/marg_smallsmall</item>
+        <item name="android:layout_marginBottom">@dimen/marg_smallsmall</item>
+    </style>
+    <style name="sudoku_txtv.3">
+        <item name="android:layout_marginLeft">@dimen/marg_smallsmall</item>
+        <item name="android:layout_marginBottom">@dimen/marg_smallsmall</item>
+    </style>
+    <style name="sudoku_txtv.4">
+        <item name="android:layout_marginRight">@dimen/marg_smallsmall</item>
+        <item name="android:layout_marginBottom">@dimen/marg_smallsmall</item>
+        <item name="android:layout_marginTop">@dimen/marg_smallsmall</item>
+    </style>
+    <style name="sudoku_txtv.5">
+        <item name="android:layout_margin">@dimen/marg_smallsmall</item>
+    </style>
+    <style name="sudoku_txtv.6">
+        <item name="android:layout_marginLeft">@dimen/marg_smallsmall</item>
+        <item name="android:layout_marginBottom">@dimen/marg_smallsmall</item>
+        <item name="android:layout_marginTop">@dimen/marg_smallsmall</item>
+    </style>
+    <style name="sudoku_txtv.7">
+        <item name="android:layout_marginRight">@dimen/marg_smallsmall</item>
+        <item name="android:layout_marginTop">@dimen/marg_smallsmall</item>
+    </style>
+    <style name="sudoku_txtv.8">
+        <item name="android:layout_marginLeft">@dimen/marg_smallsmall</item>
+        <item name="android:layout_marginRight">@dimen/marg_smallsmall</item>
+        <item name="android:layout_marginTop">@dimen/marg_smallsmall</item>
+    </style>
+    <style name="sudoku_txtv.9">
+        <item name="android:layout_marginLeft">@dimen/marg_smallsmall</item>
+        <item name="android:layout_marginTop">@dimen/marg_smallsmall</item>
+    </style>
+    <style name="clavier_bouton_style">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:onClick">sudoku_clavier_num</item>
+        <item name="android:textSize">@dimen/bouton_clavier_textsize</item>
+        <item name="android:textColor">@color/colorBlack</item>
+        <item name="android:layout_margin">2dp</item>
+        <item name="android:soundEffectsEnabled">false</item>
+    </style>
+    <style name="clavier_bouton_img_style">
+        <item name="android:layout_height">match_parent</item>
+    </style>
+    <style name="layout_mainclavier_style">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/mainclavier_height</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+    <style name="layout_mainclavier_horiz_style">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+    <style name="layout_clavier_style">
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:orientation">horizontal</item>
+    </style>
+</resources>

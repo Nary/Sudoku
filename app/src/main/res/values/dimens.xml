@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="bouton_clavier_height">45dp</dimen>
+    <dimen name="bouton_clavier_width">36dp</dimen>
+    <dimen name="bouton_clavier_textsize">20sp</dimen>
+    <dimen name="bouton_sudoku_textSize">20sp</dimen>
+    <dimen name="img_size_sqr">36dp</dimen>
+    <dimen name="marg_big">4dp</dimen>
+    <dimen name="marg_small">2dp</dimen>
+    <dimen name="marg_smallsmall">1dp</dimen>
+    <dimen name="text_size_mini">9sp</dimen>
+    <dimen name="text_size_normal">20sp</dimen>
+    <dimen name="sudoku_size">315dp</dimen>
+
+    <dimen name="clavier_height">50dp</dimen>
+    <dimen name="mainclavier_height">100dp</dimen>
+    <dimen name="mainclavier_height_big">300dp</dimen>
+</resources>

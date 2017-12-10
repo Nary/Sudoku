@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">Sudoku</string>
+    <string name="b_test">Start</string>
+    <string name="case_0"> </string>
+
+    <string name="dif_easy">Easy</string>
+    <string name="dif_med">Medium</string>
+    <string name="dif_hard">Hard</string>
+    <string name="end_win_title">Congratulation !</string>
+    <string name="end_win_msg">Time : </string>
+    <string name="finish">Finish</string>
+    <string name="back">Back</string>
+    <string name="new_game">New</string>
+    <string name="error_title">Error</string>
+    <string name="error">A square or more are wrong</string>
+    <string name="error1">Check the number </string>
+    <string name="error2">Check the numbers : </string>
+    <string name="back_message">Exit ?</string>
+    <string name="restart_message">Restart this Sudoku ?</string>
+    <string name="new_start_message">Start a new Sudoku ?</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="pause">Pause</string>
+    <string name="restart">Restart</string>
+    <string name="play">Play</string>
+    <string name="next">Next</string>
+    <string name="debug_test">test</string>
+    <string name="exit">Exit</string>
+    <string name="new_w">New</string>
+</resources>

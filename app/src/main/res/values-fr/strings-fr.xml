@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Sudoku</string>
+    <string name="b_test">Démarrer</string>
+    <string name="case_0"> </string>
+
+    <string name="dif_easy">Facile</string>
+    <string name="dif_med">Moyen</string>
+    <string name="dif_hard">Difficile</string>
+    <string name="end_win_title">Bravo !</string>
+    <string name="end_win_msg">Temps : </string>
+    <string name="finish">Terminer</string>
+    <string name="back">Retour</string>
+    <string name="new_game">Nouveau</string>
+    <string name="error_title">Erreur</string>
+    <string name="error">Une case ou plus sont fausses</string>
+    <string name="error1">Verifiez le chiffre </string>
+    <string name="error2">Verifiez les chiffres suivants : </string>
+    <string name="back_message">Quitter ?</string>
+    <string name="restart_message">Recommencer ce Sudoku ?</string>
+    <string name="new_start_message">Commencer un nouveau Sudoku ?</string>
+    <string name="yes">Oui</string>
+    <string name="no">Non</string>
+    <string name="pause">Pause</string>
+    <string name="play">Jouer</string>
+    <string name="restart">Recommencer</string>
+    <string name="next">Suivant</string>
+    <string name="debug_test">test</string>
+    <string name="exit">Quitter</string>
+    <string name="new_w">Nouveau</string>
+</resources>

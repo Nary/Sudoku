@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/menu_reload"
+        android:icon="@android:drawable/ic_media_rew"
+        android:title="@string/restart"
+        android:visible="true"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/menu_pause"
+        android:icon="@android:drawable/ic_media_pause"
+        android:title="@string/pause"
+        android:visible="true"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/menu_play"
+        android:icon="@android:drawable/ic_media_play"
+        android:title="@string/play"
+        android:visible="false"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/menu_next"
+        android:icon="@android:drawable/ic_media_next"
+        android:title="@string/next"
+        android:visible="true"
+        app:showAsAction="always" />
+</menu>

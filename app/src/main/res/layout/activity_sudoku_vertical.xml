@@ -1,0 +1,1162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/layout_chrono"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal"
+            android:visibility="visible">
+
+            <TextView
+                android:id="@+id/textdifficulty"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="right"
+                android:textSize="18sp" />
+
+            <Chronometer
+                android:id="@+id/chrono"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="left"
+                android:textSize="18sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layoutmain_sudoku"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal"
+            android:visibility="visible">
+
+            <LinearLayout
+                android:id="@+id/linear_layout_sudoku"
+                style="@style/layout_sudoku"
+                android:layout_width="@dimen/sudoku_size"
+                android:layout_height="@dimen/sudoku_size">
+
+                <LinearLayout
+                    android:id="@+id/row0"
+                    style="@style/row_top">
+
+                    <LinearLayout style="@style/sub_linlayout.gauche">
+
+                        <TextView
+                            android:id="@+id/c00"
+                            style="@style/sudoku_txtv.1"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="@android:color/white"
+                            android:tag="00" />
+
+                        <TextView
+                            android:id="@+id/c01"
+                            style="@style/sudoku_txtv.2"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="match_parent"
+                            android:background="@android:color/white"
+                            android:tag="01"
+                            android:text="@string/case_0" />
+
+                        <TextView
+                            android:id="@+id/c02"
+                            style="@style/sudoku_txtv.3"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginBottom="1dp"
+                            android:layout_marginLeft="1dp"
+                            android:layout_weight="1"
+                            android:background="@android:color/white"
+                            android:tag="02"
+                            android:text="@string/case_0" />
+
+                    </LinearLayout>
+
+                    <LinearLayout style="@style/sub_linlayout.mid">
+
+                        <TextView
+                            android:id="@+id/c03"
+                            style="@style/sudoku_txtv.1"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:tag="03"
+                            android:text="@string/case_0" />
+
+                        <TextView
+                            android:id="@+id/c04"
+                            style="@style/sudoku_txtv.2"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:tag="04"
+                            android:text="@string/case_0" />
+
+                        <TextView
+                            android:id="@+id/c05"
+                            style="@style/sudoku_txtv.3"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:tag="05"
+                            android:text="@string/case_0" />
+                    </LinearLayout>
+
+                    <LinearLayout style="@style/sub_linlayout.droite">
+
+                        <TextView
+                            android:id="@+id/c06"
+                            style="@style/sudoku_txtv.1"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:tag="06"
+                            android:text="@string/case_0" />
+
+                        <TextView
+                            android:id="@+id/c07"
+                            style="@style/sudoku_txtv.2"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:tag="07"
+                            android:text="@string/case_0" />
+
+                        <TextView
+                            android:id="@+id/c08"
+                            style="@style/sudoku_txtv.3"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:tag="08"
+                            android:text="@string/case_0" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/row1"
+                    style="@style/row_mid"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <LinearLayout style="@style/sub_linlayout.gauche">
+
+                        <TextView
+                            android:id="@+id/c10"
+                            style="@style/sudoku_txtv.4"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="@android:color/white"
+                            android:tag="10"
+                            android:text="@string/case_0" />
+
+                        <TextView
+                            android:id="@+id/c11"
+                            style="@style/sudoku_txtv.5"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_margin="1dp"
+                            android:layout_weight="1"
+                            android:background="@android:color/white"
+                            android:tag="11" />
+
+                        <TextView
+                            android:id="@+id/c12"
+                            style="@style/sudoku_txtv.6"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginBottom="1dp"
+                            android:layout_marginLeft="1dp"
+                            android:layout_marginTop="1dp"
+                            android:layout_weight="1"
+                            android:background="@android:color/white"
+                            android:tag="12"
+                            android:text="@string/case_0" />
+                    </LinearLayout>
+
+                    <LinearLayout style="@style/sub_linlayout.mid">
+
+                        <TextView
+                            android:id="@+id/c13"
+                            style="@style/sudoku_txtv.4"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:tag="13"
+                            android:text="@string/case_0" />
+
+                        <TextView
+                            android:id="@+id/c14"
+                            style="@style/sudoku_txtv.5"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:tag="14"
+                            android:text="@string/case_0" />
+
+                        <TextView
+                            android:id="@+id/c15"
+                            style="@style/sudoku_txtv.6"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:tag="15"
+                            android:text="@string/case_0" />
+                    </LinearLayout>
+
+                    <LinearLayout style="@style/sub_linlayout.droite">
+
+                        <TextView
+                            android:id="@+id/c16"
+                            style="@style/sudoku_txtv.4"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:tag="16"
+                            android:text="@string/case_0" />
+
+                        <TextView
+                            android:id="@+id/c17"
+                            style="@style/sudoku_txtv.5"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:tag="17"
+                            android:text="@string/case_0" />
+
+                        <TextView
+                            android:id="@+id/c18"
+                            style="@style/sudoku_txtv.6"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:tag="18"
+                            android:text="@string/case_0" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/row2"
+                    style="@style/row_mid">
+
+                    <LinearLayout style="@style/sub_linlayout.gauche">
+
+                        <TextView
+                            android:id="@+id/c20"
+                            style="@style/sudoku_txtv.7"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginRight="1dp"
+                            android:layout_marginTop="1dp"
+                            android:layout_weight="1"
+                            android:background="@android:color/white"
+                            android:tag="20"
+                            android:text="@string/case_0" />
+
+                        <TextView
+                            android:id="@+id/c21"
+                            style="@style/sudoku_txtv.8"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="1dp"
+                            android:layout_marginRight="1dp"
+                            android:layout_marginTop="1dp"
+                            android:layout_weight="1"
+                            android:background="@android:color/white"
+                            android:tag="21"
+                            android:text="@string/case_0" />
+
+                        <TextView
+                            android:id="@+id/c22"
+                            style="@style/sudoku_txtv.9"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="1dp"
+                            android:layout_marginTop="1dp"
+                            android:layout_weight="1"
+                            android:background="@android:color/white"
+                            android:tag="22"
+                            android:text="@string/case_0" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        style="@style/sub_linlayout.mid"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/c23"
+                            style="@style/sudoku_txtv.7"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:tag="23"
+                            android:text="@string/case_0" />
+
+                        <TextView
+                            android:id="@+id/c24"
+                            style="@style/sudoku_txtv.8"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:tag="24"
+                            android:text="@string/case_0" />
+
+                        <TextView
+                            android:id="@+id/c25"
+                            style="@style/sudoku_txtv.9"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:tag="25"
+                            android:text="@string/case_0" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        style="@style/sub_linlayout.droite"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/c26"
+                            style="@style/sudoku_txtv.7"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:tag="26"
+                            android:text="@string/case_0" />
+
+                        <TextView
+                            android:id="@+id/c27"
+                            style="@style/sudoku_txtv.8"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:tag="27"
+                            android:text="@string/case_0" />
+
+                        <TextView
+                            android:id="@+id/c28"
+                            style="@style/sudoku_txtv.9"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:tag="28"
+                            android:text="@string/case_0" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/row3"
+                    style="@style/row_top"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <LinearLayout style="@style/sub_linlayout.gauche">
+
+                        <TextView
+                            android:id="@+id/c30"
+                            style="@style/sudoku_txtv.1"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:tag="30"
+                            android:text="@string/case_0" />
+
+                        <TextView
+                            android:id="@+id/c31"
+                            style="@style/sudoku_txtv.2"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:tag="31"
+                            android:text="@string/case_0" />
+
+                        <TextView
+                            android:id="@+id/c32"
+                            style="@style/sudoku_txtv.3"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:tag="32"
+                            android:text="@string/case_0" />
+                    </LinearLayout>
+
+                    <LinearLayout style="@style/sub_linlayout.mid">
+
+                        <TextView
+                            android:id="@+id/c33"
+                            style="@style/sudoku_txtv.1"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:tag="33"
+                            android:text="@string/case_0" />
+
+                        <TextView
+                            android:id="@+id/c34"
+                            style="@style/sudoku_txtv.2"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:tag="34"
+                            android:text="@string/case_0" />
+
+                        <TextView
+                            android:id="@+id/c35"
+                            style="@style/sudoku_txtv.3"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:tag="35"
+                            android:text="@string/case_0" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        style="@style/sub_linlayout.droite"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/c36"
+                            style="@style/sudoku_txtv.1"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:tag="36"
+                            android:text="@string/case_0" />
+
+                        <TextView
+                            android:id="@+id/c37"
+                            style="@style/sudoku_txtv.2"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:tag="37"
+                            android:text="@string/case_0" />
+
+                        <TextView
+                            android:id="@+id/c38"
+                            style="@style/sudoku_txtv.3"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:tag="38"
+                            android:text="@string/case_0" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/row4"
+                    style="@style/row_mid"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <LinearLayout style="@style/sub_linlayout.gauche">
+
+                        <TextView
+                            android:id="@+id/c40"
+                            style="@style/sudoku_txtv.4"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:tag="40"
+                            android:text="@string/case_0" />
+
+                        <TextView
+                            android:id="@+id/c41"
+                            style="@style/sudoku_txtv.5"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:tag="41"
+                            android:text="@string/case_0" />
+
+                        <TextView
+                            android:id="@+id/c42"
+                            style="@style/sudoku_txtv.6"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:tag="42"
+                            android:text="@string/case_0" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        style="@style/sub_linlayout.mid"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/c43"
+                            style="@style/sudoku_txtv.4"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:tag="43"
+                            android:text="@string/case_0" />
+
+                        <TextView
+                            android:id="@+id/c44"
+                            style="@style/sudoku_txtv.5"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:tag="44"
+                            android:text="@string/case_0" />
+
+                        <TextView
+                            android:id="@+id/c45"
+                            style="@style/sudoku_txtv.6"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:tag="45"
+                            android:text="@string/case_0" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        style="@style/sub_linlayout.droite"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/c46"
+                            style="@style/sudoku_txtv.4"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:tag="46"
+                            android:text="@string/case_0" />
+
+                        <TextView
+                            android:id="@+id/c47"
+                            style="@style/sudoku_txtv.5"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:tag="47"
+                            android:text="@string/case_0" />
+
+                        <TextView
+                            android:id="@+id/c48"
+                            style="@style/sudoku_txtv.6"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:tag="48"
+                            android:text="@string/case_0" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/row5"
+                    style="@style/row_mid">
+
+                    <LinearLayout style="@style/sub_linlayout.gauche">
+
+                        <TextView
+                            android:id="@+id/c50"
+                            style="@style/sudoku_txtv.7"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:tag="50"
+                            android:text="@string/case_0" />
+
+                        <TextView
+                            android:id="@+id/c51"
+                            style="@style/sudoku_txtv.8"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:tag="51"
+                            android:text="@string/case_0" />
+
+                        <TextView
+                            android:id="@+id/c52"
+                            style="@style/sudoku_txtv.9"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:tag="52"
+                            android:text="@string/case_0" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        style="@style/sub_linlayout.mid"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/c53"
+                            style="@style/sudoku_txtv.7"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:tag="53"
+                            android:text="@string/case_0" />
+
+                        <TextView
+                            android:id="@+id/c54"
+                            style="@style/sudoku_txtv.8"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:tag="54"
+                            android:text="@string/case_0" />
+
+                        <TextView
+                            android:id="@+id/c55"
+                            style="@style/sudoku_txtv.9"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:tag="55"
+                            android:text="@string/case_0" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        style="@style/sub_linlayout.droite"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/c56"
+                            style="@style/sudoku_txtv.7"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:tag="56"
+                            android:text="@string/case_0" />
+
+                        <TextView
+                            android:id="@+id/c57"
+                            style="@style/sudoku_txtv.8"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:tag="57"
+                            android:text="@string/case_0" />
+
+                        <TextView
+                            android:id="@+id/c58"
+                            style="@style/sudoku_txtv.9"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:tag="58"
+                            android:text="@string/case_0" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/row6"
+                    style="@style/row_top"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <LinearLayout style="@style/sub_linlayout.gauche">
+
+                        <TextView
+                            android:id="@+id/c60"
+                            style="@style/sudoku_txtv.1"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:tag="60"
+                            android:text="@string/case_0" />
+
+                        <TextView
+                            android:id="@+id/c61"
+                            style="@style/sudoku_txtv.2"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:tag="61"
+                            android:text="@string/case_0" />
+
+                        <TextView
+                            android:id="@+id/c62"
+                            style="@style/sudoku_txtv.3"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:tag="62"
+                            android:text="@string/case_0" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        style="@style/sub_linlayout.mid"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/c63"
+                            style="@style/sudoku_txtv.1"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:tag="63"
+                            android:text="@string/case_0" />
+
+                        <TextView
+                            android:id="@+id/c64"
+                            style="@style/sudoku_txtv.2"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:tag="64"
+                            android:text="@string/case_0" />
+
+                        <TextView
+                            android:id="@+id/c65"
+                            style="@style/sudoku_txtv.3"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:tag="65"
+                            android:text="@string/case_0" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        style="@style/sub_linlayout.droite"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/c66"
+                            style="@style/sudoku_txtv.1"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:tag="66"
+                            android:text="@string/case_0" />
+
+                        <TextView
+                            android:id="@+id/c67"
+                            style="@style/sudoku_txtv.2"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:tag="67"
+                            android:text="@string/case_0" />
+
+                        <TextView
+                            android:id="@+id/c68"
+                            style="@style/sudoku_txtv.3"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:tag="68"
+                            android:text="@string/case_0" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/row7"
+                    style="@style/row_mid"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <LinearLayout style="@style/sub_linlayout.gauche">
+
+                        <TextView
+                            android:id="@+id/c70"
+                            style="@style/sudoku_txtv.4"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:tag="70"
+                            android:text="@string/case_0" />
+
+                        <TextView
+                            android:id="@+id/c71"
+                            style="@style/sudoku_txtv.5"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:tag="71"
+                            android:text="@string/case_0" />
+
+                        <TextView
+                            android:id="@+id/c72"
+                            style="@style/sudoku_txtv.6"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:tag="72"
+                            android:text="@string/case_0" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        style="@style/sub_linlayout.mid"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/c73"
+                            style="@style/sudoku_txtv.4"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:tag="73"
+                            android:text="@string/case_0" />
+
+                        <TextView
+                            android:id="@+id/c74"
+                            style="@style/sudoku_txtv.5"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:tag="74"
+                            android:text="@string/case_0" />
+
+                        <TextView
+                            android:id="@+id/c75"
+                            style="@style/sudoku_txtv.6"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:tag="75"
+                            android:text="@string/case_0" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        style="@style/sub_linlayout.droite"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/c76"
+                            style="@style/sudoku_txtv.4"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:tag="76"
+                            android:text="@string/case_0" />
+
+                        <TextView
+                            android:id="@+id/c77"
+                            style="@style/sudoku_txtv.5"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:tag="77"
+                            android:text="@string/case_0" />
+
+                        <TextView
+                            android:id="@+id/c78"
+                            style="@style/sudoku_txtv.6"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:tag="78"
+                            android:text="@string/case_0" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/row8"
+                    style="@style/row_bot">
+
+                    <LinearLayout style="@style/sub_linlayout.gauche">
+
+                        <TextView
+                            android:id="@+id/c80"
+                            style="@style/sudoku_txtv.7"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:tag="80"
+                            android:text="@string/case_0" />
+
+                        <TextView
+                            android:id="@+id/c81"
+                            style="@style/sudoku_txtv.8"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:tag="81"
+                            android:text="@string/case_0" />
+
+                        <TextView
+                            android:id="@+id/c82"
+                            style="@style/sudoku_txtv.9"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:tag="82"
+                            android:text="@string/case_0" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        style="@style/sub_linlayout.mid"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/c83"
+                            style="@style/sudoku_txtv.7"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:tag="83"
+                            android:text="@string/case_0" />
+
+                        <TextView
+                            android:id="@+id/c84"
+                            style="@style/sudoku_txtv.8"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:tag="84"
+                            android:text="@string/case_0" />
+
+                        <TextView
+                            android:id="@+id/c85"
+                            style="@style/sudoku_txtv.9"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:tag="85"
+                            android:text="@string/case_0" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        style="@style/sub_linlayout.droite"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/c86"
+                            style="@style/sudoku_txtv.7"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:tag="86"
+                            android:text="@string/case_0" />
+
+                        <TextView
+                            android:id="@+id/c87"
+                            style="@style/sudoku_txtv.8"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:tag="87"
+                            android:text="@string/case_0" />
+
+                        <TextView
+                            android:id="@+id/c88"
+                            style="@style/sudoku_txtv.9"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:tag="88"
+                            android:text="@string/case_0" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/clavier_main"
+            style="@style/layout_mainclavier_style"
+            android:visibility="visible">
+
+            <LinearLayout
+                android:id="@+id/clavier1a"
+                style="@style/layout_clavier_style"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <Button
+                    android:id="@+id/b1"
+                    style="@style/clavier_bouton_style"
+                    android:tag="1"
+                    android:text="1" />
+
+                <Button
+                    android:id="@+id/b2"
+                    style="@style/clavier_bouton_style"
+                    android:tag="2"
+                    android:text="2" />
+
+                <Button
+                    android:id="@+id/b3"
+                    style="@style/clavier_bouton_style"
+                    android:tag="3"
+                    android:text="3" />
+
+                <Button
+                    android:id="@+id/b4"
+                    style="@style/clavier_bouton_style"
+                    android:tag="4"
+                    android:text="4" />
+
+                <Button
+                    android:id="@+id/b5"
+                    style="@style/clavier_bouton_style"
+                    android:tag="5"
+                    android:text="5" />
+
+                <Button
+                    android:id="@+id/b6"
+                    style="@style/clavier_bouton_style"
+                    android:tag="6"
+                    android:text="6" />
+
+                <Button
+                    android:id="@+id/b7"
+                    style="@style/clavier_bouton_style"
+                    android:tag="7"
+                    android:text="7" />
+
+                <Button
+                    android:id="@+id/b8"
+                    style="@style/clavier_bouton_style"
+                    android:tag="8"
+                    android:text="8" />
+
+                <Button
+                    android:id="@+id/b9"
+                    style="@style/clavier_bouton_style"
+                    android:tag="9"
+                    android:text="9" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/clavier2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ImageButton
+                    android:id="@+id/bdel"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/bouton_clavier_height"
+                    android:layout_weight="1"
+                    android:onClick="sudoku_clavier_delete"
+                    android:scaleType="fitCenter"
+                    app:srcCompat="@drawable/gomme_grey" />
+
+                <ImageButton
+                    android:id="@+id/bnote"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/bouton_clavier_height"
+                    android:layout_weight="1"
+                    android:onClick="sudoku_clavier_note"
+                    android:scaleType="fitCenter"
+                    app:srcCompat="@drawable/pen_grey3" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layoutpause"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:visibility="gone"
+            android:weightSum="2">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center_vertical|center_horizontal"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/exit_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/bouton_clavier_height"
+                    android:onClick="exitButton"
+                    android:text="@string/exit"
+                    android:textColor="@color/colorBlack" />
+
+                <Button
+                    android:id="@+id/new_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/bouton_clavier_height"
+                    android:layout_toLeftOf="@+id/exit_button"
+                    android:onClick="nouvel_partie"
+                    android:text="@string/new_game"
+                    android:textColor="@color/colorBlack" />
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/bouton_clavier_height"
+                android:layout_weight="1"
+                android:gravity="bottom">
+
+                <com.google.android.gms.ads.AdView xmlns:ads="http://schemas.android.com/apk/res-auto"
+                    android:id="@+id/adView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    ads:adSize="BANNER"
+                    ads:adUnitId="ca-app-pub-7882919351226127/7348738690"></com.google.android.gms.ads.AdView>
+
+            </RelativeLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+
+
+</LinearLayout>
