@@ -1,7 +1,9 @@
 package com.gmail.aina.nary.sudoku;
 
+import android.os.Build;
 import android.os.Bundle;
 import android.os.SystemClock;
+import android.support.annotation.RequiresApi;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.util.TypedValue;
@@ -9,7 +11,9 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Chronometer;
+import android.widget.ImageButton;
 import android.widget.LinearLayout;
+import android.widget.Space;
 import android.widget.TextView;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
@@ -20,7 +24,10 @@ import com.google.android.gms.ads.MobileAds;
 
 import java.util.Stack;
 
+import static com.gmail.aina.nary.sudoku.R.id.bdel;
+import static com.gmail.aina.nary.sudoku.R.id.bnote;
 import static com.gmail.aina.nary.sudoku.R.id.chrono;
+import static com.gmail.aina.nary.sudoku.R.id.clavier2;
 import static com.gmail.aina.nary.sudoku.R.id.clavier_main;
 import static com.gmail.aina.nary.sudoku.R.id.layoutpause;
 import static com.gmail.aina.nary.sudoku.R.id.layoutmain_sudoku;
@@ -59,13 +66,18 @@ public class Activity_Sudoku extends AppCompatActivity {
     private LinearLayout layout_sudoku;
     private LinearLayout layout_clavier;
     private LinearLayout layout_pause;
+    private LinearLayout layout_clavier_sub2;
     private MenuItem menupause;
     private MenuItem menuplay;
     private MenuItem menurestart;
     private MenuItem menunewstart;
     private TextView txt_difficulty;
 
+    private ImageButton ibnote;
+    private ImageButton ibdelete;
+
     //private String pub_string = "ca-app-pub-3940256099942544~3347511713";
+    //private String pub_string = "ca-app-pub-3940256099942544/6300978111"; // pub test 2 ?
     private String pub_string = "ca-app-pub-7882919351226127/7348738690"; // vrai pub
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -77,15 +89,20 @@ public class Activity_Sudoku extends AppCompatActivity {
         chronosudo = (Chronometer) findViewById(chrono);
         layout_sudoku = (LinearLayout) findViewById(layoutmain_sudoku);
         layout_clavier = (LinearLayout) findViewById(clavier_main);
+        layout_clavier_sub2 = (LinearLayout) findViewById(clavier2);
         layout_pause = (LinearLayout) findViewById(layoutpause);
         txt_difficulty = (TextView) findViewById(textdifficulty);
 
         //pubs
         MobileAds.initialize(this, pub_string);
         mAdView = (AdView) findViewById(com.gmail.aina.nary.sudoku.R.id.adView);
-        AdRequest adRequest = new AdRequest.Builder().build();
-
+        AdRequest adRequest = new AdRequest
+                .Builder()
+                .addTestDevice("D27EBAFFA1BB486E2C0D0C86E6FB1172")
+                .addTestDevice("920735A35F946929BC1481832D02CB43")
+                        .build();
         //AdRequest adRequest = new AdRequest.Builder().addTestDevice("5D39C88A0B07910E").build();
+
         mAdView.loadAd(adRequest);
         delete_sudoku();
         creer_sudoku();
@@ -93,7 +110,16 @@ public class Activity_Sudoku extends AppCompatActivity {
 
         creer_pb_sudoku();
         chronosudo.setBase(SystemClock.elapsedRealtime());
+
         chronosudo.start();
+        // pour version inferieur a lollipop
+        ibnote = (ImageButton) findViewById(bnote);
+        ibdelete = (ImageButton) findViewById(bdel);
+
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP) {
+            ibnote.setBackgroundColor(getResources().getColor(R.color.colorGray));
+            ibdelete.setBackgroundColor(getResources().getColor(R.color.colorGray));
+        }
     }
 
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -109,7 +135,7 @@ public class Activity_Sudoku extends AppCompatActivity {
     public void caseSudoku(View view) {
         String tag = (String) view.getTag();
 
-        if (sudoku_save != null) { //recolorier la case precedament utilise en blanc
+        if (sudoku_save != null) { //recolorier la case precedemment utilise en blanc
             color_case(get_coordX(sudoku_save),get_coordY(sudoku_save), com.gmail.aina.nary.sudoku.R.color.colorWhite);
         }
 
@@ -165,14 +191,23 @@ public class Activity_Sudoku extends AppCompatActivity {
     }
 
     public void sudoku_clavier_note(View view) {
-
+    //SDK conflit
         mode_note = !mode_note;
-        if (mode_note) {
-            view.setBackgroundTintList((ContextCompat.getColorStateList(this, com.gmail.aina.nary.sudoku.R.color.colorGrayDark)));
-        }
-        else {
-            view.setBackgroundTintList((ContextCompat.getColorStateList(this, com.gmail.aina.nary.sudoku.R.color.colorGray)));
-        }
+            if (mode_note) {
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                    view.setBackgroundTintList((ContextCompat.getColorStateList(this, R.color.colorGrayDark)));
+                }
+                else {
+                    view.setBackgroundColor(getResources().getColor(R.color.colorGrayDark));
+                }
+            } else {
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                    view.setBackgroundTintList((ContextCompat.getColorStateList(this, R.color.colorGray)));
+                }
+                else {
+                    view.setBackgroundColor(getResources().getColor(R.color.colorGray));
+                }
+            }
     }
 
     private String coord_to_id(int x, int y) {
@@ -207,13 +242,20 @@ public class Activity_Sudoku extends AppCompatActivity {
         TextView tv = (TextView) findViewById(resID);
         tv.setBackgroundResource(colorID);
     }
+
     private void colorTint_case(int x, int y, int colorID) {
         int resID = get_case(x, y);
         TextView tv = (TextView) findViewById(resID);
-        tv.getBackground().setTint(ContextCompat.getColor(this, colorID));
+        //SDK conflit
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            tv.getBackground().setTint(ContextCompat.getColor(this, colorID));
+        }
+        //else {
+            //tv.getBackground().setTint(ContextCompat.getColor(this, colorID));
+        //}
     }
 
-    //pb : colore les background et on eprd donc les case grise à ne pas toucher ??
+    //pb : colore les background et on perd donc les case grise à ne pas toucher ??
     public void color_helper(int x, int y, int colorID) {
         int resID;
         int xv,yv;
@@ -277,7 +319,7 @@ public class Activity_Sudoku extends AppCompatActivity {
             sudoku_note[x][y] = sudoku_note[x][y] + s + " ";
         }
         else {
-            //tester si contien deja le chiffre
+            //tester si contient deja le chiffre
             if (sudoku_note[x][y].indexOf(s) == -1) {
                 if (sudoku_note[x][y].length() <= 16) {
                     if ((sudoku_note[x][y].length() - 4) % 6 == 0) { //si on doit retourner a la ligne
@@ -506,9 +548,20 @@ public class Activity_Sudoku extends AppCompatActivity {
                                 creer_pb_sudoku();
                                 resetChrono();
                                 resumeChrono();
+                                menupause.setVisible(true);
+                                menuplay.setVisible(false);
                                 showGame();
                             }
                         })
+                        .setNeutralButton(getResources().getString(R.string.new_difficulty),
+                                new DialogInterface.OnClickListener()
+                                {
+                                    public void onClick(DialogInterface dialog, int id)
+                                    {
+                                        finish();
+
+                                    }
+                                })
                         .setNegativeButton(getResources().getString(com.gmail.aina.nary.sudoku.R.string.no), new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int id) {
 
@@ -586,17 +639,44 @@ public class Activity_Sudoku extends AppCompatActivity {
         sudoku_p = sd.copyTab(sudoku_p_save);
         creer_pb_sudoku();
     }
-    public void nouvel_partie() {
-        delete_sudoku();
+    public void nouvel_partie(View view) {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setMessage(getResources().getString(com.gmail.aina.nary.sudoku.R.string.new_start_message))
+                .setPositiveButton(getResources().getString(com.gmail.aina.nary.sudoku.R.string.yes), new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        delete_sudoku();
 
-        creer_sudoku();
-        afficher_sudoku();
+                        creer_sudoku();
+                        afficher_sudoku();
 
-        creer_pb_sudoku();
-        resetChrono();
-        resumeChrono();
-        showGame();
+                        creer_pb_sudoku();
+                        resetChrono();
+                        resumeChrono();
+                        showGame();
+                        menupause.setVisible(true);
+                        menuplay.setVisible(false);
+                    }
+                })
+
+                .setNeutralButton(getResources().getString(R.string.new_difficulty),
+                        new DialogInterface.OnClickListener()
+                        {
+                            public void onClick(DialogInterface dialog, int id)
+                            {
+                                finish();
+
+                            }
+                        })
+                .setNegativeButton(getResources().getString(com.gmail.aina.nary.sudoku.R.string.no), new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+
+                        dialog.cancel();
+                    }
+                });
+        builder.show();
+
     }
+
     private void creer_sudoku() {
         sudoku = new int[sizeS][sizeS];
         sudoku = sd.genSudokuBC(sudoku);
