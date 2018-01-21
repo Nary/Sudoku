@@ -3,7 +3,6 @@ package com.gmail.aina.nary.sudoku;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.SystemClock;
-import android.support.annotation.RequiresApi;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.util.TypedValue;
@@ -13,7 +12,6 @@ import android.view.View;
 import android.widget.Chronometer;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
-import android.widget.Space;
 import android.widget.TextView;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
@@ -66,7 +64,6 @@ public class Activity_Sudoku extends AppCompatActivity {
     private LinearLayout layout_sudoku;
     private LinearLayout layout_clavier;
     private LinearLayout layout_pause;
-    private LinearLayout layout_clavier_sub2;
     private MenuItem menupause;
     private MenuItem menuplay;
     private MenuItem menurestart;
@@ -82,14 +79,23 @@ public class Activity_Sudoku extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        String data = getIntent().getExtras().getString("Difficulty");
-        difficulte = Integer.parseInt(data);
+
+        // recuperer difficulte
+        Bundle extras = getIntent().getExtras();
+        String data = "0";
+        if (extras != null) {
+            data = getIntent().getExtras().getString("Difficulty");
+            difficulte = Integer.parseInt(data);
+        }
+        else {
+            difficulte = 0;
+        }
+
         setContentView(R.layout.activity_sudoku_vertical);
         sd = new SudokuTab();
         chronosudo = (Chronometer) findViewById(chrono);
         layout_sudoku = (LinearLayout) findViewById(layoutmain_sudoku);
         layout_clavier = (LinearLayout) findViewById(clavier_main);
-        layout_clavier_sub2 = (LinearLayout) findViewById(clavier2);
         layout_pause = (LinearLayout) findViewById(layoutpause);
         txt_difficulty = (TextView) findViewById(textdifficulty);
 
@@ -257,8 +263,7 @@ public class Activity_Sudoku extends AppCompatActivity {
 
     //pb : colore les background et on perd donc les case grise à ne pas toucher ??
     public void color_helper(int x, int y, int colorID) {
-        int resID;
-        int xv,yv;
+
         //colorer colone
         for (int i = 0; i<9;i++) {
             color_case(x,i,colorID);
@@ -278,8 +283,6 @@ public class Activity_Sudoku extends AppCompatActivity {
     }
 
     public void color_helper_delete(int x, int y) {
-        int resID;
-        int xv,yv;
         //colorer colone
         for (int i = 0; i<9;i++) {
             if (sudoku_write[x][i]){
@@ -695,6 +698,8 @@ public class Activity_Sudoku extends AppCompatActivity {
             case 3 :
                 str = getString(com.gmail.aina.nary.sudoku.R.string.dif_hard)+ " "; break;
                 //txt_difficulty.setText(getString(R.string.dif_hard)+ " ");break;
+            default:
+                str = getString(com.gmail.aina.nary.sudoku.R.string.dif_easy)+ " ";break;
         }
         txt_difficulty.setText(str);
     }
